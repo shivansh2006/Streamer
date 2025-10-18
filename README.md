@@ -12,6 +12,14 @@ Premium streaming platform for movies and TV shows with TMDB integration and mul
 - 🎨 **Beautiful UI** - Modern, responsive design
 - ✨ **Anime Section** - Dedicated trending anime section
 
+## Screenshots
+![Home](ScreenShots/Home.png)
+![Home](ScreenShots/Home2.png)
+![Home](ScreenShots/Home3.png)
+![Search](ScreenShots/Search.png)
+![Series](ScreenShots/Series.png)
+![Player](ScreenShots/player.png)
+
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
