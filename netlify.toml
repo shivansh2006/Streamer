@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = ".next"  # Netlify plugin handles SSR, so use .next
+  functions = "netlify/functions"  # for API routes
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
