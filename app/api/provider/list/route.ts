@@ -1,34 +1,37 @@
 import { NextResponse } from 'next/server'
-import { pluginRepo } from '@/lib/providers/config'
+import { getAggregatedStreams } from '@/lib/providers/aggregator'
+import { cache } from '@/lib/cache'
 
-type ScraperEntry = {
-  id: string
-  name: string
-  filename: string
-  enabled?: boolean
-}
+export async function GET(req: Request) {
+  const url = new URL(req.url)
+  const idParam = url.searchParams.get('id')
 
-type TapframeManifest = {
-  name?: string
-  version?: string
-  scrapers?: ScraperEntry[]
-}
+  if (!idParam) {
+    return NextResponse.json({ sources: [] })
+  }
 
-export async function GET() {
-  if (!pluginRepo) return NextResponse.json({ providers: [] })
-  
+  // Convert id to string if it's not
+  const id = String(idParam)
+  const key = `prefetch:${id}`
+  const now = Date.now()
+
   try {
-    const manifestUrl = new URL('manifest.json', pluginRepo.apiUrl).toString()
-    const res = await fetch(manifestUrl, { cache: 'no-store' })
-    if (!res.ok) return NextResponse.json({ providers: [] })
-    
-    const json: TapframeManifest = await res.json()
-    const providers = (json.scrapers || [])
-      .filter(s => s && typeof s.filename === 'string' && s.enabled !== false)
-      .map(s => ({ id: s.id, name: s.name }))
-    
-    return NextResponse.json({ providers })
-  } catch {
-    return NextResponse.json({ providers: [] })
+    // Check cache first
+    const cached = cache.get(key)
+    if (cached && now - cached.ts < 1000 * 60 * 10) {
+      return NextResponse.json(cached.data)
+    }
+
+    // Fetch streams
+    const sources = await getAggregatedStreams(id)
+    const data = { sources }
+
+    // Cache the result
+    cache.set(key, { ts: now, data })
+
+    return NextResponse.json(data)
+  } catch (err) {
+    console.error(err)
+    return NextResponse.json({ sources: [] })
   }
 }
