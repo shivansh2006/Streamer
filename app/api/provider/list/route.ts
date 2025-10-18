@@ -18,7 +18,7 @@ export async function GET() {
   if (!pluginRepo) return NextResponse.json({ providers: [] })
   
   try {
-    const manifestUrl = new URL('manifest.json', pluginRepo).toString()
+    const manifestUrl = new URL('manifest.json', pluginRepo.apiUrl).toString()
     const res = await fetch(manifestUrl, { cache: 'no-store' })
     if (!res.ok) return NextResponse.json({ providers: [] })
     
