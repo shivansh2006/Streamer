@@ -33,18 +33,25 @@ TMDB_API_KEY=your_tmdb_api_key_here
 ```
 
 Get a TMDB API key from: https://www.themoviedb.org/settings/api
+/**************************************************************************************************
+ 🚨🚨🚨 CRITICAL NOTE — READ BEFORE RUNNING THE APP 🚨🚨🚨
 
-NOTE 
+ 🔹 FOR TV EPISODES:
+ { name: 'Server (Primary)', url: (id, s, e) => 'YOUR_EMBED_URL/' + id + '/' + s + '/' + e }
+ 📁 Location: app/watch/tv/[id]/[season]/[episode]/WatchTVPageClient.tsx
 
-// For TV episodes
-{ name: 'Server (Primary)', url: (id, s, e) => 'YOUR_EMBED_URL/' + id + '/' + s + '/' + e }
-"app/watch/tv/[id]/[season]/[episode]/WatchTVPageClient.tsx"
+ 🔹 FOR MOVIES:
+ { name: 'Server (Primary)', url: (id) => 'YOUR_EMBED_URL/' + id }
+ 📁 Location: app/watch/[id]/WatchMoviePageClient.tsx
 
-// For movies
-{ name: 'Server (Primary)', url: (id) => 'YOUR_EMBED_URL/' + id }
-"app/watch/[id]/WatchMoviePageClient.tsx"
+ 🔑 IMPORTANT:
+ ➤ Replace "YOUR_EMBED_URL" with your actual embed endpoint.
+ ➤ Without this, video playback WILL NOT WORK.
+ ➤ Get your TMDB API Key here: https://www.themoviedb.org/settings/api
 
-Get a TMDB API key from: https://www.themoviedb.org/settings/api
+ ⚠️ This configuration is REQUIRED for both movie and TV streaming functionality.
+**************************************************************************************************/
+
 
 ### 3. Run Development Server
 ```bash
