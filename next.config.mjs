@@ -1,6 +1,9 @@
-// next.config.js
-module.exports = {
-  eslint: {
-    ignoreDuringBuilds: true,
+// next.config.mjs
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['image.tmdb.org'],
   },
 };
+
+export default nextConfig;
