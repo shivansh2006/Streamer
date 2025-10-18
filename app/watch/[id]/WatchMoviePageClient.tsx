@@ -20,10 +20,10 @@ type Props = {
 }
 
 const EMBED_SERVERS = [
-  { name: 'Server 1 (Primary)', url: (id: string) => `https://vidsrc.xyz/embed/movie/${id}` },
-  { name: 'Server 2 ', url: (id: string) => `https://vidsrc.to/embed/movie/${id}` },
-  { name: 'Server 3 ', url: (id: string) => `https://moviesapi.club/movie/${id}` },
-  { name: 'Server 4 ', url: (id: string) => `https://www.primewire.tf/embed/movie/${id}` },
+  { name: 'Server 1 (Primary)', url: (id: string) => `${id}` },
+  { name: 'Server 2 ', url: (id: string) => `${id}` },
+  { name: 'Server 3 ', url: (id: string) => `${id}` },
+  { name: 'Server 4 ', url: (id: string) => `${id}` },
 ]
 
 export default function WatchMoviePageClient({ movieId, movie }: Props) {
