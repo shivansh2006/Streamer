@@ -13,7 +13,6 @@ Premium streaming platform for movies and TV shows with TMDB integration and mul
 - ✨ **Anime Section** - Dedicated trending anime section
 
 ## Screenshots
-![Home](ScreenShots/Home.png)
 ![Home](ScreenShots/Home2.png)
 ![Home](ScreenShots/Home3.png)
 ![Search](ScreenShots/Search.png)
@@ -34,6 +33,18 @@ Create `.env.local` in project root:
 ```env
 TMDB_API_KEY=your_tmdb_api_key_here
 ```
+
+Get a TMDB API key from: https://www.themoviedb.org/settings/api
+
+NOTE 
+
+// For TV episodes
+{ name: 'Server (Primary)', url: (id, s, e) => 'YOUR_EMBED_URL/' + id + '/' + s + '/' + e }
+"app/watch/tv/[id]/[season]/[episode]/WatchTVPageClient.tsx"
+
+// For movies
+{ name: 'Server (Primary)', url: (id) => 'YOUR_EMBED_URL/' + id }
+"app/watch/[id]/WatchMoviePageClient.tsx"
 
 Get a TMDB API key from: https://www.themoviedb.org/settings/api
 
