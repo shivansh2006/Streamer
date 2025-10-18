@@ -129,7 +129,7 @@ export function SettingsDrawer() {
                   <div className="p-4 bg-[var(--bg-secondary)] rounded-lg border border-white/10">
                     <p className="text-sm text-[var(--text-secondary)]">
                       <strong className="text-white">OpenSubtitles Integration</strong><br/>
-                      Automatic subtitle fetching from the world's largest subtitle database. 
+                      Automatic subtitle fetching from the world&apos;s largest subtitle database. 
                       Subtitles load automatically based on your language preference.
                     </p>
                   </div>
@@ -154,7 +154,6 @@ export function SettingsDrawer() {
                       Professional streaming platform powered by TMDB and multiple reliable video servers.
                     </p>
                   </div>
-
                 </div>
               </section>
             </div>
