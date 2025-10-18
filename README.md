@@ -67,7 +67,8 @@ lib/
 
 ## 🎮 Servers
 
-The platform uses 4 reliable embed servers for optimal streaming quality.
+The platform can uses reliable embed servers for optimal streaming quality. IYKYK 😉😜
+
 
 ## 🛠️ Available Scripts
 
