@@ -25,9 +25,9 @@ type Props = {
 }
 
 const EMBED_SERVERS = [
-  { name: '(Primary) (English/Regional) ', url: (id: string, s: string, e: string) => `https://moviesapi.club/tv/${id}-${s}-${e}` },
-  { name: 'Server 1 ', url: (id: string, s: string, e: string) => `https://vidsrc.xyz/embed/tv/${id}/${s}/${e}` },
-  { name: 'Server 2 ', url: (id: string, s: string, e: string) => `https://vidsrc.to/embed/tv/${id}/${s}/${e}` },
+  { name: '(Primary) (English/Regional) ', url: (id: string, s: string, e: string) => `Your_Embed_Server${id}/${s}/${e}`},
+  { name: 'Server 1 ', url: (id: string, s: string, e: string) => `Your_Embed_Server${id}/${s}/${e}` },
+  { name: 'Server 2 ', url: (id: string, s: string, e: string) => `Your_Embed_Server${id}/${s}/${e}` },
 ]
 
 export default function WatchTVPageClient({ tvId, seasonNumber, episodeNumber, show, episode }: Props) {
