@@ -156,4 +156,4 @@ All rights to the content provided by TMDB remain with them.
 This project is intended **for educational purposes only**. It is not to be used for commercial purposes or monetization in any way.
 
 ## License
-This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See the LICENSE file for details.
+This project is licensed under the **BSD 3-Clause License**. See the LICENSE file for details.
