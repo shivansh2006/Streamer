@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { PopupBlocker } from '../../../../../../components/PopupBlocker'
 
 type Props = {
   tvId: string
