@@ -20,9 +20,9 @@ type Props = {
 }
 
 const EMBED_SERVERS = [
-  { name: '(Primary)(English/Regional) ', url: (id: string) => `https://moviesapi.club/movie/${id}` },
-  { name: 'Server 1 ', url: (id: string) => `https://vidsrc.xyz/embed/movie/${id}` },
-  { name: 'Server 2 ', url: (id: string) => `https://vidsrc.to/embed/movie/${id}` },
+  { name: '(Primary)(English/Regional) ', url: (id: string) => `Your_Embed_Server${id}` },
+  { name: 'Server 1 ', url: (id: string) => `Your_Embed_Server${id}` },
+  { name: 'Server 2 ', url: (id: string) => `Your_Embed_Server${id}` },
  
 ]
 
