@@ -146,6 +146,14 @@ npm run type-check # TypeScript type checking
 - **Tailwind CSS** - Styling
 - **TMDB API** - Movie/TV metadata
 
-## � License
+# Movie Scraper (Educational Project)
 
-This project is for educational purposes only.
+## Acknowledgements
+This project uses data provided by [TMDB (The Movie Database) API](https://www.themoviedb.org/documentation/api). 
+All rights to the content provided by TMDB remain with them.
+
+## Purpose
+This project is intended **for educational purposes only**. It is not to be used for commercial purposes or monetization in any way.
+
+## License
+This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See the LICENSE file for details.
