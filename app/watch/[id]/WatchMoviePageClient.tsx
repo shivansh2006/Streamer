@@ -86,7 +86,6 @@ export default function WatchMoviePageClient({ movieId, movie }: Props) {
             className="w-full h-full"
             allowFullScreen
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            sandbox="allow-same-origin allow-scripts allow-forms allow-presentation"
             onLoad={() => setIsLoading(false)}
           />
         </div>
