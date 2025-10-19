@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server'
 import { cache } from '@/lib/cache'
-import { getAggregatedStreams } from '@/lib/providers/utils'
+import { getAggregatedStreams } from '@/lib/providers/aggregator'
 
 export async function GET(req: Request) {
   const url = new URL(req.url)
-  const id = url.searchParams.get('id')
-  if (!id) return NextResponse.json({ sources: [] })
+  const idStr = url.searchParams.get('id')
+  const id = idStr ? parseInt(idStr, 10) : NaN
+  if (!id || Number.isNaN(id)) return NextResponse.json({ sources: [] })
 
   const cacheKey = `prefetch-${id}`
   const cached = cache.get(cacheKey)
@@ -16,7 +17,7 @@ export async function GET(req: Request) {
   }
 
   try {
-    const sources = await getAggregatedStreams(id) // id is a string
+  const sources = await getAggregatedStreams(id)
     const data = { sources }
     cache.set(cacheKey, { ts: now, data })
     return NextResponse.json(data)
