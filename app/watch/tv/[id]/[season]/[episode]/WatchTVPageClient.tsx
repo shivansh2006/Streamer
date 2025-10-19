@@ -37,11 +37,9 @@ export default function WatchTVPageClient({ tvId, seasonNumber, episodeNumber, s
   const currentEmbedUrl = EMBED_SERVERS[selectedServer].url(tvId, seasonNumber, episodeNumber)
 
   return (
-    <>
-      <PopupBlocker />
-      <div className="min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Breadcrumb */}
+    <div className="min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb */}
           <div className="mb-4 text-sm text-[var(--text-secondary)]">
             <Link href={`/tv/${tvId}`} className="hover:text-[var(--accent)]">
               {show.name}
@@ -98,9 +96,8 @@ export default function WatchTVPageClient({ tvId, seasonNumber, episodeNumber, s
             src={currentEmbedUrl}
             className="w-full h-full"
             allowFullScreen
-            sandbox="allow-same-origin allow-scripts allow-forms allow-popups-to-escape-sandbox"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay; fullscreen"
-            referrerPolicy="no-referrer"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            sandbox="allow-same-origin allow-scripts allow-forms allow-presentation"
             onLoad={() => setIsLoading(false)}
           />
         </div>
@@ -149,6 +146,5 @@ export default function WatchTVPageClient({ tvId, seasonNumber, episodeNumber, s
         </div>
       </div>
     </div>
-    </>
   )
 }
