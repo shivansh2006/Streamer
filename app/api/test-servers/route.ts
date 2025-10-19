@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getAllServerStreams } from '@/lib/providers/servers'
+import getAllServerStreams(id) from '@/lib/providers/servers'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
