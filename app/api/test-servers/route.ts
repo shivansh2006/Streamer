@@ -15,11 +15,8 @@ export async function GET(req: Request) {
   console.log(`[TEST-SERVERS] Testing integrated servers for TMDB ID: ${id}`)
 
   try {
-    // ✅ FIXED: removed extra argument (function expects 0 params)
-    const streams = await getAllServerStreams().catch(err => {
-      console.error('Stream fetch error:', err)
-      return []
-    })
+    // Get streams directly (not async)
+    const streams = getAllServerStreams()
 
     return NextResponse.json({
       success: true,
