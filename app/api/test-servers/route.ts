@@ -13,10 +13,11 @@ export async function GET(req: Request) {
   }
 
   console.log(`[TEST-SERVERS] Testing 6 integrated servers for TMDB ID: ${id}`)
-  
+
   try {
-    const streams = await getAllServerStreams(id, 'movie')
-    
+    // ✅ Call with no arguments
+    const streams = await getAllServerStreams()
+
     return NextResponse.json({
       success: true,
       movieId: id,
@@ -24,9 +25,9 @@ export async function GET(req: Request) {
       streams: streams.map(s => ({
         provider: s.provider,
         quality: s.quality,
-        url: s.url.substring(0, 100) + '...' // Truncate for readability
+        url: s.url.substring(0, 100) + '...'
       })),
-      fullStreams: streams // Include full URLs
+      fullStreams: streams
     })
   } catch (error: any) {
     console.error('[TEST-SERVERS] Error:', error)
