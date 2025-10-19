@@ -32,13 +32,11 @@ export default function WatchMoviePageClient({ movieId, movie }: Props) {
   const currentEmbedUrl = EMBED_SERVERS[selectedServer].url(movieId)
 
   return (
-    <>
-      <PopupBlocker />
-      <div className="min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Breadcrumb */}
-          <div className="mb-4 text-sm text-[var(--text-secondary)]">
-            <Link href={`/movie/${movieId}`} className="hover:text-[var(--accent)]">
+    <div className="min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb */}
+        <div className="mb-4 text-sm text-[var(--text-secondary)]">
+          <Link href={`/movie/${movieId}`} className="hover:text-[var(--accent)]">
             ← Back to {movie.title}
           </Link>
         </div>
@@ -87,9 +85,8 @@ export default function WatchMoviePageClient({ movieId, movie }: Props) {
             src={currentEmbedUrl}
             className="w-full h-full"
             allowFullScreen
-            sandbox="allow-same-origin allow-scripts allow-forms allow-popups-to-escape-sandbox"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay; fullscreen"
-            referrerPolicy="no-referrer"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            sandbox="allow-same-origin allow-scripts allow-forms allow-presentation"
             onLoad={() => setIsLoading(false)}
           />
         </div>
@@ -135,6 +132,5 @@ export default function WatchMoviePageClient({ movieId, movie }: Props) {
         </div>
       </div>
     </div>
-    </>
   )
 }
