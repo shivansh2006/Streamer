@@ -11,6 +11,13 @@ export type TmdbMovie = {
   vote_count?: number
   runtime?: number
   genres?: { id: number; name: string }[]
+  // additional fields used in pages
+  status?: string
+  original_title?: string
+  budget?: number
+  revenue?: number
+  original_language?: string
+  production_companies?: { id: number; name: string }[]
 }
 
 async function tmdbFetch<T>(path: string, query?: Record<string, string | number | undefined>): Promise<T> {
