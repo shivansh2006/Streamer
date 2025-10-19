@@ -23,8 +23,7 @@ export async function GET(req: Request) {
       movieId: id,
       totalStreams: streams.length,
       streams: streams.map(s => ({
-        provider: s.provider,
-        quality: s.quality,
+        name: s.name,
         url: s.url?.substring(0, 100) + '...' // truncate long URLs
       })),
       fullStreams: streams // keep full URLs
