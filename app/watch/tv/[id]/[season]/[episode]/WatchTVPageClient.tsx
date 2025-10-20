@@ -25,7 +25,6 @@ type Props = {
 }
 
 const EMBED_SERVERS = [
-  { name: '(Primary) (Regional) ', url: (id: string, s: string, e: string) => `https://player.smashy.stream/movie${id}/${s}/${e}`},
   { name: '(Primary) (English/Regional) ', url: (id: string, s: string, e: string) => `https://moviesapi.club/movie/${id}/${s}/${e}`},
   { name: 'Server 1 ', url: (id: string, s: string, e: string) => `https://vidsrc.to/embed/movie/${id}/${s}/${e}` },
   { name: 'Server 2 ', url: (id: string, s: string, e: string) => `https://vidsrc.xyzz/embed/movie/${id}/${s}/${e}` },
