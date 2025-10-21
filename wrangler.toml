@@ -1,3 +1,4 @@
-name = "streamparadise"
+name = "streamer"
+pages_build_output_dir = ".next"
 compatibility_date = "2025-10-20"
 main = ".vercel/output/static/_worker.js"
